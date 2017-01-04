@@ -1,1 +1,1 @@
-web: gunicorn souffle.wsgi --log-file -
+web: gunicorn SouffleMignon.wsgi --log-file -
