@@ -5,8 +5,10 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Lora:400,400i,700,700i" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/static/core.css" />
+    <link rel="stylesheet" href="/static/header.css" />
+    <link rel="stylesheet" href="/static/footer.css" />
     <link rel="stylesheet" href="/static/index.css" />
+    <link rel="stylesheet" href="/static/about.css" />
 
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -18,12 +20,10 @@
 
 <body>
     <div class="container-fluid">
-        <div class="row">
-            {% include "header.html" %}
-        </div>
-
+        {% include "header.html" %}
         {% block content %}
         {% endblock %}
+        {% include "footer.html" %}
     </div>
 </body>
 </html>

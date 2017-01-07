@@ -9,16 +9,24 @@ input:focus { outline: none; }
 
 /* Header styles */
 .header {
-    position: fixed;
-    padding-top: 25px;
-    padding-right: 25px;
-    z-index: 10;
-
+    padding: 25px;
     font-family: "Lato", sans-serif;
     font-size: 16px;
     font-weight: 300;
-    color: #FFF;
-    /*background-color: #FFF;*/
+    color: #333;
+}
+
+.header .title {
+    float: left;
+    display: block;
+    margin-top: -6px;
+    margin-left: 20px;
+    font-family: "Lato", serif;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: inherit;
+    text-decoration: none;
 }
 
 .header .links {
@@ -26,14 +34,16 @@ input:focus { outline: none; }
 }
 .header .link {
     float: left;
+    display: block;
     padding: 2px 0px;
     margin: 0px 20px;
-    cursor: pointer;
+    color: inherit;
     border-bottom: solid 1px rgba(0,0,0,0);
     transition: border-color 0.2s;
 }
 .header .link:hover {
-    border-color: #FFF;
+    border-color: #333;
+    text-decoration: none;
 }
 
 .header .search {
@@ -51,7 +61,7 @@ input:focus { outline: none; }
     margin-left: 20px;
     background: none;
     border: none;
-    border-bottom: solid 1px #FFF;
+    border-bottom: solid 1px #333;
 }
 .header .search-btn {
     float: left;
@@ -60,3 +70,18 @@ input:focus { outline: none; }
     font-size: 15px;
     cursor: pointer;
 }
+
+
+
+/* Header!Dark styles */
+.header.dark {
+    position: fixed;
+    padding-top: 25px;
+    padding-right: 25px;
+    z-index: 10;
+    color: #FFF;
+    background: none;
+}
+.header.dark .link:hover { border-color: #FFF; }
+.header.dark .search-box { border-color: #FFF; }
+.header.dark .title { display: none; }

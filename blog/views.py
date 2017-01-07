@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from django.views.generic import TemplateView
 
-# Create your views here.
+class ListView(TemplateView):
+    template_name = "list.html"
+
+class BlogView(TemplateView):
+    template_name = "blog.html"

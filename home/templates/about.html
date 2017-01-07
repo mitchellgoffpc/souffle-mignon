@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row" id="about-background">
+    <div class="col-xs-12 background"></div>
+    <div class="col-xs-12 overlay">
+        <div class="inner">
+            <div class="title">{ about us }</div>
+            <div class="subtitle">tldr; we're pretty cool</div>
+        </div>
+    </div>
+</div>
+
+<div class="row full-height" id="about">
+    <div class="col-xs-12 window"></div>
+    <div class="col-xs-12 content">
+        <div class="row inner">
+            <div class="col-sm-6 panel-outer">
+                <div class="panel-inner">
+                    <img class="image" src="/static/images/mitchell.jpg" />
+                    <div class="name">Mitchell Goff</div>
+                    <div class="description">I'm just an ordinary person</div>
+                </div>
+            </div>
+
+            <div class="col-sm-6 panel-outer">
+                <div class="panel-inner">
+                    <img class="image" src="/static/images/mitchell.jpg" />
+                    <div class="name">Gabriela Moreno</div>
+                    <div class="description">I'm just an ordinary person too!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
