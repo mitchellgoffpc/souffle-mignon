@@ -6,6 +6,6 @@ from home.views import AboutView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^blog/', include('blog.urls')),
+    url(r'^blog/', include('blogs.urls')),
     url(r'^about/$', AboutView.as_view(), name='about'),
     url(r'^$', HomeView.as_view(), name='home')]
