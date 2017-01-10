@@ -57,12 +57,105 @@
 }
 
 
-/* Landing window */
-#page .window { height: 100%; }
-#page .content {
+/* Content */
+#window { height: 100%; }
+#content {
     position: relative;
-    height: 800px;
     z-index: 20;
-    padding-top: 40px;
-    background-color: #EEE;
+    padding: 40px 0;
+    background-color: #FAFAFA;
+}
+#content .inner {
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+#content .column-header {
+    width: 100%;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    border-bottom: solid 1px #EAEAEA;
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+    line-height: 1.5em;
+}
+#content .column-header .top {
+    font-weight: 700;
+    color: #333;
+}
+#content .column-header .bottom {
+    font-weight: 300;
+    color: #999;
+}
+
+
+
+/* Blog list */
+#content .blog {
+    display: block;
+    width: 100%;
+    background-color: #FFF;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,0.09);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    text-align: center;
+}
+
+#content .blog .info {
+    padding-bottom: 20px;
+    border-bottom: solid 2px #FFF;
+    transition: border-color 0.2s;
+}
+#content .blog:hover .info {
+    border-color: #008F95;
+}
+
+#content .blog .title a {
+    text-decoration: none;
+    color: inherit;
+}
+#content .blog .title {
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-family: "Lato", serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: #333;
+    text-align: center;
+}
+
+#content .blog .author {
+    display: inline-block;
+    margin: 0 8px;
+    font-family: "Lato", sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    color: #333;
+}
+#content .blog .author a {
+    font-weight: 700;
+    color: #008F95;
+}
+#content .blog .date {
+    display: inline-block;
+    margin: 0 8px;
+    font-family: "Lato", sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: #333;
+}
+#content .blog .border {
+    display: inline-block;
+    height: 10px;
+    margin-top: 2px;
+    border-left: solid 1px #CCC;
+}
+
+#content .blog .image {
+    width: 100%;
+    overflow: hidden;
+}
+#content .blog .image img {
+    width: 100%;
 }

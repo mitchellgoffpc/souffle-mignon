@@ -39,12 +39,12 @@
 
 
 /* Content styles */
-#about { background-color: #EEE; }
+#about { background-color: #FAFAFA; }
 #about .window { height: 360px; }
 #about .content {
     position: relative;
     z-index: 20;
-    background-color: #EEE;
+    background-color: #FAFAFA;
     font-family: "Lato", sans-serif;
     color: #333;
 }
@@ -58,8 +58,12 @@
     border-radius: 0;
 }
 #about .panel-inner {
+    overflow: hidden;
     background-color: #FFF;
-    box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.15);
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,0.09);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    /*box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.15);*/
 }
 #about .image {
     padding-bottom: 10px;

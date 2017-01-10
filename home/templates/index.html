@@ -16,8 +16,40 @@
   </div>
 </div>
 
-<div class="row full-height" id="page">
-    <div class="col-xs-12 window"></div>
-    <div class="col-xs-12 content"></div>
+<div class="row">
+    <div class="col-xs-12" id="window"></div>
+    <div class="col-xs-12" id="content">
+        <div class="row inner">
+            <div class="col-lg-8">
+                <div class="column-header">
+                    <div class="top">Recent posts</div>
+                    <div class="bottom">The stuff that's new</div>
+                </div>
+
+                {% for blog in object_list %}
+                <div class="blog">
+                    <div class="image">
+                        <a href="/blog/{{ blog.slug }}/"><img src="{{ blog.img }}" /></a>
+                    </div>
+                    <div class="info">
+                        <div class="title"><a href="/blog/{{ blog.slug }}/">{{ blog.title }}</a></div>
+                        <div class="author">by <a href="/about/">{{ blog.author }}</a></div>
+                        <div class="border"></div>
+                        <div class="date">{{ blog.date|date:"F j, Y" }}</div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div class="col-lg-4">
+                <div class="column-header">
+                    <div class="top">Twitter</div>
+                    <div class="bottom">150 characters of <b>souffl&eacute;</b></div>
+                </div>
+
+                Stuff goes here
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock content %}

@@ -1,7 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div>
-    Single blog
+<div class="row full-height" id="blog">
+    <div class="title-wrapper">
+        <div class="title">{{ object.title }}</div>
+        <div class="author">by <a href="/about/">{{ object.author }}</a></div>
+        <div class="border"></div>
+        <div class="date">{{ object.date|date:"F j, Y" }}</div>
+    </div>
+
+    <div class="image">
+        <img src="{{ object.img }}" />
+    </div>
+
+    <div class="entry">{{ object.entry|linebreaks }}</div>
 </div>
 {% endblock content %}
