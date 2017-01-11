@@ -13,6 +13,6 @@
         <img src="{{ object.img }}" />
     </div>
 
-    <div class="entry">{{ object.entry|linebreaks }}</div>
+    <div class="entry">{{ object.entry|safe|linebreaks }}</div>
 </div>
 {% endblock content %}

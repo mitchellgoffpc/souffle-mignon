@@ -7,7 +7,7 @@ from blogs.models import Blog
 class HomeView(ListView):
     template_name = 'index.html'
     header_class = 'dark'
-    model = Blog
+    queryset = Blog.objects.order_by('-date')[:5]
 
 class AboutView(TemplateView):
     template_name = 'about.html'

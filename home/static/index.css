@@ -1,3 +1,6 @@
+/* Colors: #008F95, #2E646C */
+
+
 /* Background styles */
 #landing-background {
     position: fixed;
@@ -27,13 +30,13 @@
     font-size: 60px;
     font-weight: 700;
     letter-spacing: 1px;
-    color: #F3EEEE;
+    color: #F3F3F3;
 }
 #landing-overlay .subtitle {
     font-family: "Lato", sans-serif;
     font-size: 28px;
     font-weight: 300;
-    color: #FFF;
+    color: #F3F3F3;
 }
 
 #landing-overlay .links {
@@ -95,6 +98,7 @@
 #content .blog {
     display: block;
     width: 100%;
+    margin-bottom: 20px;
     background-color: #FFF;
     border-radius: 3px;
     border: 1px solid rgba(0,0,0,0.09);
@@ -108,7 +112,7 @@
     transition: border-color 0.2s;
 }
 #content .blog:hover .info {
-    border-color: #008F95;
+    border-color: #2E646C;
 }
 
 #content .blog .title a {
@@ -135,7 +139,7 @@
 }
 #content .blog .author a {
     font-weight: 700;
-    color: #008F95;
+    color: #2E646C;
 }
 #content .blog .date {
     display: inline-block;

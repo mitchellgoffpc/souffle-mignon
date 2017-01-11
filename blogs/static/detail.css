@@ -46,8 +46,6 @@
 
 #blog .image {
     width: 100%;
-    height: 460px;
-    overflow: hidden;
 }
 #blog .image img {
     width: 100%;
@@ -55,12 +53,14 @@
 
 #blog .entry {
     width: 660px;
-    margin: 0 auto;
-    margin-bottom: 40px;
-
+    margin: 40px auto;
     font-family: "Lora", serif;
     font-size: 18px;
     font-weight: 300;
     color: #333;
     line-height: 2.0em;
+}
+#blog .entry img {
+    display: block;
+    margin: 20px auto;
 }
