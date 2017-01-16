@@ -7,11 +7,6 @@
       <div class="inner">
           <div class="title">{ souffl&eacute; mignon }</div>
           <div class="subtitle">a blog about <b>science</b>, <b>cooking</b>, and <b>love</b></div>
-          <!-- <div class="links">
-              <div class="link">About Us</div>
-              <div class="link">Articles</div>
-              <div class="link">Videos</div>
-          </div> -->
       </div>
   </div>
 </div>
@@ -28,11 +23,10 @@
 
                 {% for blog in object_list %}
                 <div class="blog">
-                    <div class="image">
-                        <a href="/blog/{{ blog.slug }}/"><img src="{{ blog.img }}" /></a>
-                    </div>
+                    <a href="/blog/{{ blog.slug }}/"></a>
+                    <div class="image"><img src="{{ blog.img }}" /></div>
                     <div class="info">
-                        <div class="title"><a href="/blog/{{ blog.slug }}/">{{ blog.title }}</a></div>
+                        <div class="title">{{ blog.title }}</div>
                         <div class="author">by <a href="/about/">{{ blog.author }}</a></div>
                         <div class="border"></div>
                         <div class="date">{{ blog.date|date:"F j, Y" }}</div>

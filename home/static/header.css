@@ -1,4 +1,10 @@
 /* Global styles */
+/* Colors:
+    #984B43 (Rust)
+    #233237 (Gunmetal)
+    #18121E (Navy)
+    # EAC67A (Warm Yello) */
+
 html, body { height: 100%; }
 textarea:focus,
 input:focus { outline: none; }

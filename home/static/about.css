@@ -1,15 +1,15 @@
 /* Background styles */
 #about-background .background {
     position: fixed;
-    height: 360px;
-    background: url(/static/images/home.jpg) no-repeat center center fixed;
+    height: 55%;
+    background: url(/static/images/space.png) no-repeat center center fixed;
     background-size: cover;
 }
 
 /* Overlay styles */
 #about-background .overlay {
     position: fixed;
-    height: 360px;
+    height: 55%;
     white-space: nowrap;
 }
 #about-background .overlay .inner {
@@ -27,7 +27,7 @@
     font-size: 60px;
     font-weight: 700;
     letter-spacing: 1px;
-    color: #F3EEEE;
+    color: #FFF;
 }
 #about-background .overlay .subtitle {
     font-family: "Lato", sans-serif;
@@ -39,8 +39,11 @@
 
 
 /* Content styles */
-#about { background-color: #FAFAFA; }
-#about .window { height: 360px; }
+#about {
+    height: 100%;
+    background-color: #FAFAFA;
+}
+#about .window { height: 55%; }
 #about .content {
     position: relative;
     z-index: 20;

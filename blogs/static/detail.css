@@ -25,10 +25,7 @@
     font-weight: 300;
     color: #333;
 }
-#blog .author a {
-    font-weight: 700;
-    color: #008F95;
-}
+#blog .author a { font-weight: 700; }
 #blog .date {
     display: inline-block;
     margin: 0 8px;
