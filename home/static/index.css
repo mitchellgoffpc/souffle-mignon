@@ -1,5 +1,4 @@
-/* Colors: #008F95, #2E646C */
-
+/* Colors: #984B43, #233237, #18121E */
 
 /* Background styles */
 #landing-background {
@@ -11,7 +10,7 @@
 
 
 /* Overlay styles */
-#landing-overlay {
+  #landing-overlay {
     position: fixed;
     height: 100%;
     white-space: nowrap;
@@ -24,7 +23,6 @@
     display: inline-block;
     text-align: center;
 }
-
 #landing-overlay .title {
     font-family: "Lora", serif;
     font-size: 60px;
@@ -39,7 +37,7 @@
     color: #F3F3F3;
 }
 
-#landing-overlay .links {
+  #landing-overlay .links {
     display: inline-block;
     margin-top: 15px;
     font-family: "Lato", sans-serif;
@@ -112,7 +110,7 @@
     transition: border-color 0.2s;
 }
 #content .blog:hover .info {
-    border-color: #2E646C;
+    border-color: #984B43;
 }
 
 #content .blog .title a {
@@ -137,10 +135,7 @@
     font-weight: 300;
     color: #333;
 }
-#content .blog .author a {
-    font-weight: 700;
-    color: #2E646C;
-}
+#content .blog .author a { font-weight: 700; }
 #content .blog .date {
     display: inline-block;
     margin: 0 8px;

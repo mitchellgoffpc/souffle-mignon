@@ -2,6 +2,14 @@
 html, body { height: 100%; }
 textarea:focus,
 input:focus { outline: none; }
+a {
+    color: #233237;
+    text-decoration: none;
+}
+a:hover {
+    color: #18121E;
+    text-decoration: underline;
+}
 
 .container-fluid { height: 100%; }
 .row.full-height { min-height: 100%; }
@@ -29,9 +37,7 @@ input:focus { outline: none; }
     text-decoration: none;
 }
 
-.header .links {
-    float: right;
-}
+.header .links { float: right; }
 .header .link {
     float: left;
     display: block;
@@ -70,7 +76,6 @@ input:focus { outline: none; }
     font-size: 15px;
     cursor: pointer;
 }
-
 
 
 /* Header!Dark styles */
