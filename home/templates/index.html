@@ -1,19 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="row full-height">
-  <div class="col-xs-12" id="landing-background"></div>
-  <div class="col-xs-12" id="landing-overlay">
-      <div class="inner">
-          <div class="title">{ souffl&eacute; mignon }</div>
-          <div class="subtitle">a blog about <b>science</b>, <b>cooking</b>, and <b>love</b></div>
-      </div>
-  </div>
+<div class="row landing" id="l-home">
+    <div class="overlay">
+        <div class="title">{ souffl&eacute; mignon }</div>
+        <div class="subtitle">a blog about <b>science</b>, <b>cooking</b>, and <b>love</b></div>
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-xs-12" id="window"></div>
-    <div class="col-xs-12" id="content">
+<div class="row window" id="w-home"></div>
+<div class="row" id="content">
+    <div class="col-xs-12">
         <div class="row inner">
             <div class="col-lg-8">
                 <div class="column-header">
@@ -23,7 +20,7 @@
 
                 {% for blog in object_list %}
                 <div class="blog">
-                    <a href="/blog/{{ blog.slug }}/"></a>
+                    <a class="link" href="/blog/{{ blog.slug }}/"></a>
                     <div class="image"><img src="{{ blog.img }}" /></div>
                     <div class="info">
                         <div class="title">{{ blog.title }}</div>

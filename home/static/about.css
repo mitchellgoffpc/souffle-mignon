@@ -1,49 +1,14 @@
-/* Background styles */
-#about-background .background {
-    position: fixed;
+/* Background image styles */
+#l-about.landing {
     height: 55%;
     background: url(/static/images/space.png) no-repeat center center fixed;
     background-size: cover;
 }
-
-/* Overlay styles */
-#about-background .overlay {
-    position: fixed;
-    height: 55%;
-    white-space: nowrap;
-}
-#about-background .overlay .inner {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: inline-block;
-    text-align: center;
-    border-radius: 15px;
-}
-
-#about-background .overlay .title {
-    font-family: "Lora", serif;
-    font-size: 60px;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: #FFF;
-}
-#about-background .overlay .subtitle {
-    font-family: "Lato", sans-serif;
-    font-size: 28px;
-    font-weight: 300;
-    color: #FFF;
-}
+#w-about.window { height: 55%; }
 
 
-
-/* Content styles */
-#about {
-    height: 100%;
-    background-color: #FAFAFA;
-}
-#about .window { height: 55%; }
+/* Page content styles */
+#about { background-color: #FAFAFA; }
 #about .content {
     position: relative;
     z-index: 20;

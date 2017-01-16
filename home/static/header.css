@@ -1,28 +1,6 @@
-/* Global styles */
-/* Colors:
-    #984B43 (Rust)
-    #233237 (Gunmetal)
-    #18121E (Navy)
-    # EAC67A (Warm Yello) */
-
-html, body { height: 100%; }
-textarea:focus,
-input:focus { outline: none; }
-a {
-    color: #233237;
-    text-decoration: none;
-}
-a:hover {
-    color: #18121E;
-    text-decoration: underline;
-}
-
-.container-fluid { height: 100%; }
-.row.full-height { min-height: 100%; }
-
-
 /* Header styles */
 .header {
+    width: 100%;
     padding: 25px;
     font-family: "Lato", sans-serif;
     font-size: 16px;
