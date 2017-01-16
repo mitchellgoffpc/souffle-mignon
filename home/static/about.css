@@ -1,8 +1,7 @@
 /* Background image styles */
 #l-about.landing {
     height: 55%;
-    background: url(/static/images/space.png) no-repeat center center fixed;
-    background-size: cover;
+    background-image: url(/static/images/space.png);
 }
 #w-about.window { height: 55%; }
 
@@ -61,18 +60,26 @@
 }
 
 #about .image {
-    padding-bottom: 10px;
     width: 100%;
     height: 260px;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
 }
+#about .image.mitchell { background-image: url(/static/images/mitchell.jpg); }
+#about .image.gabby { background-image: url(/static/images/gabby.jpg); }
+
 #about .name {
-    padding: 5px 20px;
+    margin: 0 20px;
+    margin-top: 20px;
     font-size: 24px;
     font-weight: 500;
 }
 #about .description {
-    padding: 5px 20px;
-    padding-bottom: 20px;
+    margin: 0 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
     font-size: 16px;
     font-weight: 300;
 }

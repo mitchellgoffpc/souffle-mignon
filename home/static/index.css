@@ -1,8 +1,7 @@
 /* Background image styles */
 #l-home.landing {
     height: 100%;
-    background: url(/static/images/home.jpg) no-repeat center center fixed;
-    background-size: cover;
+    background-image: url(/static/images/home.jpg);
 }
 #w-home.window { height: 100%; }
 
