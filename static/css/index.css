@@ -38,8 +38,8 @@
 }
 
 
-/* Recent blog styles */
-#content .blog {
+/* Recent article styles */
+#content .article {
     position: relative;
     display: block;
     width: 100%;
@@ -51,11 +51,11 @@
     text-align: center;
 }
 
-#content .blog a {
+#content .article a {
     position: relative;
     z-index: 1;
 }
-#content .blog .link {
+#content .article .link {
     display: block;
     position: absolute;
     top: 0;
@@ -64,16 +64,16 @@
     height: 100%;
     z-index: 0;
 }
-#content .blog .info {
+#content .article .info {
     padding-bottom: 20px;
     border-bottom: solid 2px #FFF;
     transition: border-color 0.2s;
 }
-#content .blog:hover .info {
+#content .article:hover .info {
     border-color: #984B43;
 }
 
-#content .blog .title {
+#content .article .title {
     margin-top: 20px;
     margin-bottom: 8px;
     font-family: "Lato", serif;
@@ -83,7 +83,7 @@
     text-align: center;
 }
 
-#content .blog .author {
+#content .article .author {
     display: inline-block;
     margin: 0 8px;
     font-family: "Lato", sans-serif;
@@ -91,8 +91,8 @@
     font-weight: 300;
     color: #333;
 }
-#content .blog .author { font-weight: 700; }
-#content .blog .date {
+#content .article .author { font-weight: 700; }
+#content .article .date {
     display: inline-block;
     margin: 0 8px;
     font-family: "Lato", sans-serif;
@@ -100,17 +100,17 @@
     font-weight: 700;
     color: #333;
 }
-#content .blog .border {
+#content .article .border {
     display: inline-block;
     height: 10px;
     margin-top: 2px;
     border-left: solid 1px #CCC;
 }
 
-#content .blog .image {
+#content .article .image {
     width: 100%;
     overflow: hidden;
 }
-#content .blog .image img {
+#content .article .image img {
     width: 100%;
 }
