@@ -16,5 +16,17 @@
     </div>
 
     <div class="entry">{{ object.entry|safe|linebreaks }}</div>
+
+    <div class="responses">
+        <div class="write login">
+            <span class="fa fa-comment-o" aria-hidden="true"></span>
+            <span class="button">Write a response...</span>
+        </div>
+
+        <div class="write">
+            <span class="fa fa-comment-o" aria-hidden="true"></span>
+            <input type="text" class="textbox" placeholder="Write a response..." />
+        </div>
+    </div>
 </div>
 {% endblock content %}

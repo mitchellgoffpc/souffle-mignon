@@ -1,3 +1,4 @@
+/* Title styles */
 #article {
     border-top: solid 1px #EAEAEA;
     background-color: #FAFAFA;
@@ -48,8 +49,11 @@
     width: 100%;
 }
 
+
+
+/* Article styles */
 #article .entry {
-    width: 660px;
+    max-width: 660px;
     margin: 40px auto;
     font-family: "Lora", serif;
     font-size: 18px;
@@ -60,4 +64,21 @@
 #article .entry img {
     display: block;
     margin: 20px auto;
+}
+
+
+
+/* Comment styles */
+#article .responses {
+    max-width: 660px;
+    margin: 40px auto;
+}
+#article .responses .write {
+    width: 100%;
+    margin: 10px 0;
+    padding: 30px 20px;
+    background-color: #FFF;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,0.09);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
 }
