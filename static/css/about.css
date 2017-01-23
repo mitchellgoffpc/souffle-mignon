@@ -1,7 +1,7 @@
 /* Background image styles */
 #l-about.landing {
     height: 55%;
-    background-image: url(/static/images/space.png);
+    background-image: url(https://s3.amazonaws.com/souffle-mignon-images/space.png);
 }
 #w-about.window { height: 55%; }
 
@@ -66,8 +66,8 @@
     background-repeat: no-repeat;
     background-position: 50% 50%;
 }
-#about .image.mitchell { background-image: url(/static/images/mitchell.jpg); }
-#about .image.gabby { background-image: url(/static/images/gabby.jpg); }
+#about .image.mitchell { background-image: url(https://s3.amazonaws.com/souffle-mignon-images/mitchell.jpg); }
+#about .image.gabby { background-image: url(https://s3.amazonaws.com/souffle-mignon-images/gabby.jpg); }
 
 #about .name {
     margin: 0 20px;

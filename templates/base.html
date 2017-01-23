@@ -2,14 +2,16 @@
 <html>
 <head>
     <title>{% block title %}Souffl&eacute; Mignon{% endblock title %}</title>
-    <link rel="icon" href="/static/images/logo.png" />
-    <link rel="apple-touch-icon" href="/static/images/logo.png">
+    <link rel="icon" href="https://s3.amazonaws.com/souffle-mignon-images/logo.png" />
+    <link rel="apple-touch-icon" href="https://s3.amazonaws.com/souffle-mignon-images/logo.png">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Lora:400,400i,700,700i" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <link rel="stylesheet" href="/static/css/core.css" />
     <link rel="stylesheet" href="/static/css/header.css" />
     <link rel="stylesheet" href="/static/css/footer.css" />
+    <link rel="stylesheet" href="/static/css/login.css" />
+
     <link rel="stylesheet" href="/static/css/index.css" />
     <link rel="stylesheet" href="/static/css/about.css" />
     <link rel="stylesheet" href="/static/css/list.css" />
@@ -20,29 +22,13 @@
       integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
       crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://platform.twitter.com/widgets.js" async></script>
     <script src="https://use.fontawesome.com/5b2c94550c.js"></script>
-    <script src="static/js/login.js"></script>
-    <script src="/static/js/index.js"></script>
-    <script>
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId   : '842416655861360',
-                xfbml   : false,
-                version : 'v2.8',
-                status  : true });
-            FB.AppEvents.logPageView();
-            SM.checkLoginStatus();
-        };
 
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) { return; }
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-    </script>
+    {% block scripts %}
+        <script src="/static/js/login.js"></script>
+    {% endblock scripts %}
+    {% include "fb.html" %}
 </head>
 
 <body>

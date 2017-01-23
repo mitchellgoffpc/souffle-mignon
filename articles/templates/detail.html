@@ -2,6 +2,11 @@
 
 {% block title %}{{ object.title }} | {{ block.super }}{% endblock %}
 
+{% block scripts %}
+    {{ block.super }}
+    <script src="/static/js/detail.js"></script>
+{% endblock scripts %}
+
 {% block content %}
 <div class="row full-height" id="article">
     <div class="title-wrapper">
@@ -15,7 +20,18 @@
         <img src="{{ object.img }}" />
     </div>
 
-    <div class="entry">{{ object.entry|safe|linebreaks }}</div>
+    <div class="entry">
+        <div class="links">
+            <div class="share">share</div>
+            <div class="link like"><span class="fa fa-heart-o"></span></div>
+            <a class="link share-tw"
+               href="https://twitter.com/intent/tweet?text={{ view.tweet|urlencode }}">
+                <span class="fa fa-twitter"></span>
+            </a>
+            <div class="link share-fb"><span class="fa fa-facebook"></span></div>
+        </div>
+        {{ object.entry|safe|linebreaks }}
+    </div>
 
     <div class="responses">
         <div class="write login">
@@ -29,4 +45,6 @@
         </div>
     </div>
 </div>
+
+{% include "login.html" %}
 {% endblock content %}

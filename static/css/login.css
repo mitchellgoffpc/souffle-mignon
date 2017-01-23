@@ -1,0 +1,112 @@
+/* Overlay styles */
+#overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: #000;
+    visibility: hidden;
+    opacity: 0.0;
+    transition: visibility 0s 0.4s, opacity 0.4s linear;
+}
+#overlay.visible {
+    visibility: visible;
+    opacity: 0.6;
+    transition: visibility 0.4s, opacity 0.4s linear;
+}
+
+
+
+/* Login modal styles */
+#login {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 500px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    z-index: 101;
+    background-color: #FFF;
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-in-out;
+}
+#login.visible {
+    transform: translateY(0%);
+}
+
+#login .banner {
+    position: relative;
+    height: 190px;
+    background: url(https://s3.amazonaws.com/souffle-mignon-images/space.png) no-repeat;
+    background-size: 100%;
+    background-position: top;
+}
+#login .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-family: "Lora", serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #FFF;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+#login .blurb {
+    width: 100%;
+    padding: 10px 30px;
+    padding-top: 20px;
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #333;
+    text-align: center;
+}
+
+#login .button {
+    position: relative;
+    height: 60px;
+    margin: 10px 30px;
+    padding: 0 20px;
+    border-radius: 3px;
+
+    cursor: pointer;
+    line-height: 60px;
+    font-family: "Lato", sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: #FFF;
+    transition: background-color 0.2s;
+}
+#login .button.tw { background-color: #55acee; }
+#login .button.tw:hover { background-color: #006daa; }
+#login .button.fb { background-color: #3b5998; }
+#login .button.fb:hover { background-color: #1d315b; }
+
+#login .button span {
+    width: 22px;
+    text-align: center;
+}
+#login .button .wrapper {
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    transform: translateY(-70%);
+    margin: 0 10px;
+    line-height: normal;
+}
+#login .button .lb {
+    font-size: 17px;
+}
+#login .button .sublb {
+    margin-top: -2px;
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.65);
+}

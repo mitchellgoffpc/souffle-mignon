@@ -51,8 +51,42 @@
 
 
 
+/* Link styles */
+#article .links {
+    position: absolute;
+    top: 20px;
+    left: -100px;
+}
+#article .link {
+    display: block;
+    width: 36px;
+    height: 36px;
+    line-height: 36px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border: solid 1px #233237;
+    border-radius: 50%;
+    color: #233237;
+    text-align: center;
+    cursor: pointer;
+}
+#article .link:hover {
+    border-color: #984B43;
+    color: #984B43;
+}
+#article .share {
+    margin-bottom: 8px;
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #233237;
+    text-align: center;
+}
+
+
 /* Article styles */
 #article .entry {
+    position: relative;
     max-width: 660px;
     margin: 40px auto;
     font-family: "Lora", serif;
