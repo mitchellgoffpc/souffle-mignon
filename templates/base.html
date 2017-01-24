@@ -1,3 +1,5 @@
+{% load compress %}
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,15 +9,16 @@
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Lora:400,400i,700,700i" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="/static/css/core.css" />
-    <link rel="stylesheet" href="/static/css/header.css" />
-    <link rel="stylesheet" href="/static/css/footer.css" />
-    <link rel="stylesheet" href="/static/css/login.css" />
-
-    <link rel="stylesheet" href="/static/css/index.css" />
-    <link rel="stylesheet" href="/static/css/about.css" />
-    <link rel="stylesheet" href="/static/css/list.css" />
-    <link rel="stylesheet" href="/static/css/detail.css" />
+    {% compress css %}
+        <link rel="stylesheet" href="/static/css/core.css" />
+        <link rel="stylesheet" href="/static/css/header.css" />
+        <link rel="stylesheet" href="/static/css/footer.css" />
+        <link rel="stylesheet" href="/static/css/login.css" />
+        <link rel="stylesheet" href="/static/css/index.css" />
+        <link rel="stylesheet" href="/static/css/about.css" />
+        <link rel="stylesheet" href="/static/css/detail.css" />
+        <link rel="stylesheet" href="/static/css/list.css" />
+    {% endcompress %}
 
     <script
       src="https://code.jquery.com/jquery-3.1.1.min.js"
@@ -25,17 +28,25 @@
     <script src="https://platform.twitter.com/widgets.js" async></script>
     <script src="https://use.fontawesome.com/5b2c94550c.js"></script>
 
-    {% block scripts %}
+
+    {% compress js %}
+        <script>window.SM = { state: {} }</script>
         <script src="/static/js/login.js"></script>
-    {% endblock scripts %}
-    {% include "fb.html" %}
+        <script src="/static/js/header.js"></script>
+        <script src="/static/js/detail.js"></script>
+        <script src="/static/js/init.js"></script>
+
+        {% block scripts %}
+        {% endblock scripts %}
+        {% include "fb.html" %}
+    {% endcompress %}
 </head>
 
 <body>
     <div class="container-fluid">
         {% include "header.html" %}
         {% block content %}
-        {% endblock %}
+        {% endblock content %}
         {% include "footer.html" %}
     </div>
 </body>

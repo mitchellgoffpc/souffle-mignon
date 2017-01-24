@@ -12,6 +12,11 @@ class ArticleDetailView(DetailView):
     template_name = "detail.html"
     model = Article
 
+    def get(self, request, **kwargs):
+        from django.contrib.auth import logout
+        logout(request)
+        return super(ArticleDetailView, self).get(request, **kwargs)
+
     def tweet(self):
         return '"{}" by @{} http://www.soufflemignon.com/blog/{}/'.format(
             self.get_object().title,

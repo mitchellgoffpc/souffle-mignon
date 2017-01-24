@@ -8,8 +8,13 @@ import dj_database_url
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
-SECRET_KEY = 'l&1ffkxp*twbuf)p8+-hduct5ks23(hf^8lr3=)uj43lci9yak'
 DEBUG = True
+
+# Secret keys
+SECRET_KEY = 'l&1ffkxp*twbuf)p8+-hduct5ks23(hf^8lr3=)uj43lci9yak'
+TWITTER = {
+    'key': "J6WHuaYyxsmS8AxfblcyJ1xGk",
+    'secret': "daGGZ9sF8uFGAZOIjATWomJDnBpN6SM65CFcPnZb7xVJyJ8CBg" }
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
@@ -31,8 +36,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'articles',
-    'readers']
+    'compressor',
+    'auth',
+    'articles']
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -65,11 +71,17 @@ DATABASES = { 'default': dj_database_url.config() }
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
 
+AUTH_USER_MODEL = 'users.User'
 AUTH_PASSWORD_VALIDATORS = [
     { 'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator' },
     { 'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator' },
     { 'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator' },
     { 'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator' } ]
+
+AUTHENTICATION_BACKENDS = [
+    'auth.backends.TwitterBackend',
+    'auth.backends.FacebookBackend',
+    'django.contrib.auth.backends.ModelBackend']
 
 
 # Internationalization
@@ -87,11 +99,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder')
 
-
-# Simplified static file serving.
-# https://warehouse.python.org/project/whitenoise/
-
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+COMPRESS_ENABLED = True

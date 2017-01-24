@@ -1,5 +1,4 @@
-// Global object
-window.SM = window.SM || { state: {} };
+// Initialization
 SM.state.linkPosition = 'TOP';
 
 // Functions
@@ -38,13 +37,3 @@ SM.updateLinkPosition = function(pos) {
             $('#article .links').css({ 'position': 'fixed', 'top': 120, 'left': entryPos - 100 });
     }
 }
-
-
-// Event handlers
-$(document).ready(function() {
-    SM.checkLinkPosition();
-    $(window).scroll(SM.checkLinkPosition);
-    $('#article .links .share-fb').click(SM.shareFacebook);
-    $('#article .links .like').click(SM.showLoginModal);
-    $('#overlay').click(SM.hideLoginModal);
-});

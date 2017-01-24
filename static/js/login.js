@@ -1,20 +1,21 @@
-// Global object
-window.SM = window.SM || { state: {} };
-
 // Functions
-SM.checkLoginStatus = function() {
-    FB.getLoginStatus(function(response) {
-        if (response.status == "connected") {
-            // Update the state
-            console.log(response.authResponse.userID);
-        }
-    });
+SM.twitterLogin = function() {
+    window.location.href = '/auth/twitter/?' +
+        'callback=' + encodeURIComponent(window.location.href);
 }
 
-SM.login = function() {
-    FB.login(function(response) {
-        console.log(response.authResponse.userID);
-    });
+SM.facebookLogin = function() {
+    FB.getLoginStatus(function(response) { callback(response, true) });
+}
+
+function callback(response, retry) {
+    if (response.status === 'connected') {
+        window.location.href = '/auth/facebook/?' +
+            'callback=' + encodeURIComponent(window.location.href) +
+            '&access_token=' + encodeURIComponent(response.authResponse.accessToken);
+    } else if (retry) {
+        FB.login(function(response) { callback(response, false) });
+    }
 }
 
 

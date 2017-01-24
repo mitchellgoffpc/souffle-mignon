@@ -1,6 +1,6 @@
 from django.db import models
 
-from readers.models import Reader
+from auth.models import User
 
 
 # Article class
@@ -19,7 +19,7 @@ class Article(models.Model):
 
 # Comment class
 class Comment(models.Model):
-    reader = models.ForeignKey(Reader)
+    user = models.ForeignKey(User)
     date = models.DateTimeField(auto_now_add=True)
     entry = models.TextField()
 
@@ -29,7 +29,7 @@ class Comment(models.Model):
 class Like(models.Model):
     class Meta: abstract = True
 
-    reader = models.ForeignKey(Reader)
+    user = models.ForeignKey(User)
     date = models.DateTimeField(auto_now_add=True)
 
 class ArticleLike(Like):
