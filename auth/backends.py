@@ -12,7 +12,7 @@ class TwitterBackend(ModelBackend):
         try:
             user = User.objects.get(twitter_id=twitter['id'])
         except User.DoesNotExist:
-            user = User(twitter_id=twitter['id'], is_staff=False)
+            user = User(username=twitter['id'], twitter_id=twitter['id'], is_staff=False)
 
         user.name = twitter['name']
         user.picture = twitter['profile_image_url_https']
@@ -37,7 +37,7 @@ class FacebookBackend(ModelBackend):
         try:
             user = User.objects.get(facebook_id=facebook['id'])
         except User.DoesNotExist:
-            user = User(facebook_id=facebook['id'], is_staff=False)
+            user = User(username=facebook['id'], facebook_id=facebook['id'], is_staff=False)
 
         user.name = facebook['name']
         user.picture = facebook['picture']['data']['url']
