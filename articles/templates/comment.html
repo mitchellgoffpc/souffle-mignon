@@ -1,0 +1,25 @@
+{% load likes %}
+
+<div class="response">
+    <div class="picture">
+        <img src="{{ comment.user.picture }}" />
+    </div>
+    <div class="name-wrapper">
+        <div class="name">{{ comment.user.name }}</div>
+        <div class="date">{{ comment.date|date:"F j, Y" }}</div>
+    </div>
+    <div class="comment">{{ comment.entry|linebreaks }}</div>
+    <div class="lower">
+        {% if not user.is_authenticated %}
+            <span class="like fa fa-heart-o" data-action="show-login"></span>
+        {% elif user|likes:comment %}
+            <span class="like selected fa fa-heart" data-action="unlike" data-id="{{ comment.id }}"></span>
+        {% else %}
+            <span class="like fa fa-heart-o" data-action="like" data-id="{{ comment.id }}"></span>
+        {% endif %}
+
+        {% if comment.likes %}
+            <span class="like-count">{{ comment.likes|length }}</span>
+        {% endif %}
+    </div>
+</div>

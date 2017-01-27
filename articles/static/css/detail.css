@@ -10,7 +10,7 @@
     margin: 40px 0;
 }
 
-#article .title {
+#article .title-wrapper .title {
     margin-bottom: 8px;
     font-family: "Lato", sans-serif;
     font-size: 28px;
@@ -18,7 +18,7 @@
     color: #333;
     text-align: center;
 }
-#article .author {
+#article .title-wrapper .author {
     display: inline-block;
     margin: 0 8px;
     font-family: "Lato", sans-serif;
@@ -26,8 +26,8 @@
     font-weight: 300;
     color: #333;
 }
-#article .author a { font-weight: 700; }
-#article .date {
+#article .title-wrapper .author a { font-weight: 700; }
+#article .title-wrapper .date {
     display: inline-block;
     margin: 0 8px;
     font-family: "Lato", sans-serif;
@@ -35,19 +35,15 @@
     font-weight: 700;
     color: #333;
 }
-#article .border {
+#article .title-wrapper .border {
     display: inline-block;
     height: 10px;
     margin-top: 2px;
     border-left: solid 1px #CCC;
 }
 
-#article .image {
-    width: 100%;
-}
-#article .image img {
-    width: 100%;
-}
+#article .image { width: 100%; }
+#article .image img { width: 100%; }
 
 
 
@@ -73,6 +69,11 @@
 #article .link:hover {
     border-color: #984B43;
     color: #984B43;
+}
+#article .link.selected {
+    border-color: #984B43;
+    background-color: #984B43;
+    color: #FFF;
 }
 #article .share {
     margin-bottom: 8px;
@@ -102,17 +103,149 @@
 
 
 
-/* Comment styles */
+/* Comment textbox styles */
 #article .responses {
-    max-width: 660px;
+    max-width: 600px;
     margin: 40px auto;
+
+    font-family: "Lato", sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #333;
 }
+
 #article .responses .write {
     width: 100%;
+    height: 80px;
     margin: 10px 0;
-    padding: 30px 20px;
+    padding: 20px 20px;
     background-color: #FFF;
     border-radius: 3px;
     border: 1px solid rgba(0,0,0,0.09);
     box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    overflow: hidden;
+}
+
+#article .write .inner {
+    display: inline-block;
+    cursor: pointer;
+    color: #888;
+}
+#article .write[data-action="show-login"] .inner:hover { color: #333; }
+#article .write[data-action="comment"] .inner { cursor: text; }
+#article .write .button { margin-left: 5px; }
+
+#article .responses .picture {
+    float: left;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    overflow: hidden;
+}
+#article .responses .picture img {
+    width: 40px;
+    height: 40px;
+}
+
+#article .write .name-wrapper {
+    float: left;
+    height: 18px;
+    line-height: 18px;
+    margin-left: 10px;
+    margin-top: 11px;
+    overflow: hidden;
+}
+#article .write .name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #233237;
+}
+
+#article .write .textbox {
+    float: left;
+    width: 100%;
+    min-height: 200px;
+    margin-top: 20px;
+    outline: none;
+}
+
+#article .write .publish {
+    float: left;
+    width: 100px;
+    height: 36px;
+    line-height: 34px;
+    margin-top: 10px;
+    border-radius: 18px;
+    border: solid 1px #233237;
+    font-weight: 300;
+    text-align: center;
+    color: #233237;
+    cursor: pointer;
+}
+#article .write .publish:hover {
+    border-color: #984B43;
+    color: #984B43;
+}
+#article .write .spinner {
+    display: none;
+    float: left;
+    margin-left: 20px;
+    margin-top: 8px;
+    font-size: 28px;
+    color: #233237;
+}
+
+
+
+/* Comment styles */
+#article .response {
+    width: 100%;
+    margin: 10px 0;
+    padding: 20px 20px;
+    background-color: #FFF;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,0.09);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    overflow: hidden;
+}
+
+#article .response .name-wrapper {
+    float: left;
+    margin-left: 10px;
+}
+#article .response .name {
+    margin-top: 2px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #233237;
+}
+#article .response .date {
+    font-size: 13px;
+    margin-top: -2px;
+    font-weight: 300;
+    color: #888;
+}
+
+#article .response .comment {
+    float: left;
+    width: 100%;
+    margin: 10px 0;
+    font-size: 16px;
+}
+#article .response .comment p:last-of-type {
+    margin-bottom: 0
+}
+
+#article .response .lower {
+    float: left;
+}
+#article .response .lower .like {
+    color: #233237;
+    cursor: pointer;
+}
+#article .response .lower .like:hover { color: #984B43; }
+#article .response .lower .like.selected { color: #984B43; }
+#article .response .lower .like-count {
+    color: #888;
+    margin-left: 5px;
 }

@@ -1,10 +1,14 @@
 {% extends "base.html" %}
+{% load likes %}
 
 {% block title %}{{ object.title }} | {{ block.super }}{% endblock %}
 
 {% block scripts %}
     {{ block.super }}
-    <script>SM.page = 'detail'</script>
+    <script>
+        SM.page = 'detail';
+        SM.article = '{{ object.id }}';
+    </script>
 {% endblock scripts %}
 
 {% block content %}
@@ -23,7 +27,14 @@
     <div class="entry">
         <div class="links">
             <div class="share">share</div>
-            <div class="link like"><span class="fa fa-heart-o"></span></div>
+            {% if not user.is_authenticated %}
+                <div class="link like" data-action="show-login"><span class="fa fa-heart-o"></span></div>
+            {% elif user|likes:object %}
+                <div class="link like selected" data-action="unlike"><span class="fa fa-heart"></span></div>
+            {% else %}
+                <div class="link like" data-action="like"><span class="fa fa-heart-o"></span></div>
+            {% endif %}
+
             <a class="link share-tw"
                href="https://twitter.com/intent/tweet?text={{ view.tweet|urlencode }}">
                 <span class="fa fa-twitter"></span>
@@ -34,17 +45,35 @@
     </div>
 
     <div class="responses">
-        <div class="write login">
-            <span class="fa fa-comment-o" aria-hidden="true"></span>
-            <span class="button">Write a response...</span>
-        </div>
+        {% if not user.is_authenticated %}
+            <div class="write" data-action="show-login">
+                <div class="inner">
+                    <span class="fa fa-comment-o" aria-hidden="true"></span>
+                    <span class="button">Write a response...</span>
+                </div>
+            </div>
+        {% else %}
+            <div class="write" data-action="comment">
+                <div class="picture">
+                    <img src="{{ user.picture }}" />
+                </div>
+                <div class="name-wrapper">
+                    <div class="lbl">Write a response...</div>
+                    <div class="name">{{ user.name }}</div>
+                </div>
 
-        <div class="write">
-            <span class="fa fa-comment-o" aria-hidden="true"></span>
-            <input type="text" class="textbox" placeholder="Write a response..." />
-        </div>
+                <div class="textbox" contenteditable></div>
+                <div class="publish">Publish</div>
+                <div class="spinner"><span class="fa fa-spinner fa-spin"></span></div>
+            </div>
+        {% endif %}
+
+        {% for comment in view.comments %}
+            {% include "comment.html" with comment=comment %}
+        {% endfor %}
     </div>
 </div>
 
+{% csrf_token %}
 {% include "login.html" %}
 {% endblock content %}

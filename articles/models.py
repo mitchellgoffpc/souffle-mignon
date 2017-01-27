@@ -19,7 +19,8 @@ class Article(models.Model):
 
 # Comment class
 class Comment(models.Model):
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, related_name="comments")
+    article = models.ForeignKey(Article, related_name="comments")
     date = models.DateTimeField(auto_now_add=True)
     entry = models.TextField()
 
@@ -29,11 +30,12 @@ class Comment(models.Model):
 class Like(models.Model):
     class Meta: abstract = True
 
-    user = models.ForeignKey(User)
     date = models.DateTimeField(auto_now_add=True)
 
 class ArticleLike(Like):
-    article = models.ForeignKey(Article)
+    user = models.ForeignKey(User, related_name="article_likes")
+    article = models.ForeignKey(Article, related_name="likes")
 
 class CommentLike(Like):
-    comment = models.ForeignKey(Comment)
+    user = models.ForeignKey(User, related_name="comment_likes")
+    comment = models.ForeignKey(Comment, related_name="likes")

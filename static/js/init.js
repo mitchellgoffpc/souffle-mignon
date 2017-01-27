@@ -8,8 +8,19 @@ $(document).ready(function() {
     if (SM.page == 'detail') {
         SM.checkLinkPosition();
         $(window).scroll(SM.checkLinkPosition);
-        $('#article .links .share-fb').click(SM.shareFacebook);
-        $('#article .links .like').click(SM.showLoginModal);
+
         $('#overlay').click(SM.hideLoginModal);
+        $('#article .links .share-fb').click(SM.shareFacebook);
+        $('#article .links .like').click(SM.didClickLikeArticle);
+        $('#article .responses .like').click(SM.didClickLikeComment);
+        $('#article .responses .write .publish').click(SM.didClickPublishComment);
+
+        $(document).click(function(e) {
+            if ($(e.target).closest('#article .responses .write').length) {
+                SM.didClickComment();
+            } else {
+                SM.didClickOutsideComment();
+            }
+        })
     }
 });
