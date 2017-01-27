@@ -127,7 +127,8 @@
 }
 
 #article .write .inner {
-    display: inline-block;
+    height: 40px;
+    line-height: 40px;
     cursor: pointer;
     color: #888;
 }
