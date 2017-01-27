@@ -9,13 +9,13 @@ $(document).ready(function() {
         SM.checkLinkPosition();
         $(window).scroll(SM.checkLinkPosition);
 
-        $('#overlay').click(SM.hideLoginModal);
-        $('#article .links .share-fb').click(SM.shareFacebook);
-        $('#article .links .like').click(SM.didClickLikeArticle);
-        $('#article .responses .like').click(SM.didClickLikeComment);
-        $('#article .responses .write .publish').click(SM.didClickPublishComment);
+        $('#overlay').on('click', SM.hideLoginModal);
+        $('#article .links .share-fb').on('click', SM.shareFacebook);
+        $('#article .links .like').on('click', SM.didClickLikeArticle);
+        $('#article .responses .write .publish').on('click', SM.didClickPublishComment);
 
-        $(document).click(function(e) {
+        $(document).on('click', '#article .responses .like', SM.didClickLikeComment);
+        $(document).on('click', function(e) {
             if ($(e.target).closest('#article .responses .write').length) {
                 SM.didClickComment();
             } else {
