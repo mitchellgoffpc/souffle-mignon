@@ -92,6 +92,7 @@ class CommentView(View):
                 user = request.user,
                 article = article,
                 entry = request.POST.get('entry'))
+            comment.num_likes = 0
             return render(request, "comment.html", { 'comment': comment })
 
         elif request.POST.get('action') == 'delete':
