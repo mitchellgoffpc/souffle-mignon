@@ -8,7 +8,7 @@
     color: #333;
 }
 
-.header .title {
+.header-lg .title {
     float: left;
     display: block;
     margin-top: -6px;
@@ -21,8 +21,8 @@
     text-decoration: none;
 }
 
-.header .links { float: right; }
-.header .link {
+.header-lg .links { float: right; }
+.header-lg .link {
     float: left;
     display: block;
     padding: 2px 0px;
@@ -31,21 +31,21 @@
     border-bottom: solid 1px rgba(0,0,0,0);
     transition: border-color 0.2s;
 }
-.header .link:hover {
+.header-lg .link:hover {
     border-color: #333;
     text-decoration: none;
 }
 
-.header .search {
+.header-lg .search {
     float: right;
     margin-right: 20px;
     padding: 2px 0px;
 }
-.header .search-box-wrapper {
+.header-lg .search-box-wrapper {
     float: left;
     overflow: hidden;
 }
-.header .search-box {
+.header-lg .search-box {
     width: 160px;
     margin-right: -180px;
     margin-left: 20px;
@@ -53,7 +53,7 @@
     border: none;
     border-bottom: solid 1px #333;
 }
-.header .search-btn {
+.header-lg .search-btn {
     float: left;
     margin-left: 20px;
     margin-top: 2px;
@@ -73,4 +73,24 @@
 }
 .header.dark .link:hover { border-color: #FFF; }
 .header.dark .search-box { border-color: #FFF; }
-.header.dark .title { display: none; }
+.header.dark .header-lg .title { display: none; }
+
+
+/* Header!Small styles */
+.header-sm .title {
+    display: block;
+    width: 100%;
+    font-family: "Lora", serif;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1px;
+    color: inherit;
+    text-decoration: none;
+}
+.header-sm .menu {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    cursor: pointer;
+}

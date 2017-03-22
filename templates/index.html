@@ -9,37 +9,36 @@
 </div>
 
 <div class="row window" id="w-home"></div>
-<div class="row" id="content">
+<div class="row" id="home">
     <div class="col-xs-12">
         <div class="row inner">
-            <div class="col-lg-8">
-                <div class="column-header">
-                    <div class="top">Recent posts</div>
-                    <div class="bottom">The stuff that's new</div>
-                </div>
 
+            <div class="col-lg-8 content">
                 {% for article in object_list %}
-                <div class="article">
-                    <a class="link" href="/articles/{{ article.slug }}/"></a>
-                    <div class="image"><img src="{{ article.img }}" /></div>
-                    <div class="info">
-                        <div class="title">{{ article.title }}</div>
-                        <div class="author">by <a href="/about/">{{ article.author }}</a></div>
-                        <div class="border"></div>
-                        <div class="date">{{ article.date|date:"F j, Y" }}</div>
+                    <div class="article">
+                        <a class="link" href="/articles/{{ article.slug }}/"></a>
+                        <div class="image"><img src="{{ article.img }}" /></div>
+                        <div class="info">
+                            <div class="title">{{ article.title }}</div>
+                            <div class="author">by <a href="/about/">{{ article.author }}</a></div>
+                            <div class="border"></div>
+                            <div class="date">{{ article.date|date:"F j, Y" }}</div>
+                        </div>
                     </div>
-                </div>
                 {% endfor %}
             </div>
 
-            <div class="col-lg-4">
-                <div class="column-header">
-                    <div class="top">Twitter</div>
-                    <div class="bottom">150 characters of <b>souffl&eacute;</b></div>
+            <div class="col-lg-4 sidebar">
+                <div class="section">
+                    <div class="title">twitter</div>
+                    <div class="content">
+                        {% for article in object_list %}
+                            <div class="item">Tweet</div>
+                        {% endfor %}
+                    </div>
                 </div>
-
-                Stuff goes here
             </div>
+
         </div>
     </div>
 </div>

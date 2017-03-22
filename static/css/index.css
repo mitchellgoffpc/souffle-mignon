@@ -7,39 +7,22 @@
 
 
 /* Page content styles */
-#content {
+#home {
     position: relative;
     z-index: 20;
     padding: 40px 0;
     background-color: #FAFAFA;
 }
-#content .inner {
+#home .inner {
     width: 100%;
-    max-width: 860px;
+    max-width: 920px;
     margin: 0 auto;
 }
 
-#content .column-header {
-    width: 100%;
-    margin-bottom: 20px;
-    padding-bottom: 5px;
-    border-bottom: solid 1px #EAEAEA;
-    font-family: "Lato", sans-serif;
-    font-size: 14px;
-    line-height: 1.5em;
-}
-#content .column-header .top {
-    font-weight: 700;
-    color: #333;
-}
-#content .column-header .bottom {
-    font-weight: 300;
-    color: #999;
-}
 
 
 /* Recent article styles */
-#content .article {
+#home .article {
     position: relative;
     display: block;
     width: 100%;
@@ -52,11 +35,11 @@
     overflow: hidden;
 }
 
-#content .article a {
+#home .article a {
     position: relative;
     z-index: 1;
 }
-#content .article .link {
+#home .article .link {
     display: block;
     position: absolute;
     top: 0;
@@ -65,16 +48,16 @@
     height: 100%;
     z-index: 0;
 }
-#content .article .info {
+#home .article .info {
     padding-bottom: 20px;
     border-bottom: solid 2px #FFF;
     transition: border-color 0.2s;
 }
-#content .article:hover .info {
+#home .article:hover .info {
     border-color: #984B43;
 }
 
-#content .article .title {
+#home .article .title {
     margin-top: 20px;
     margin-bottom: 8px;
     font-family: "Lato", serif;
@@ -84,7 +67,7 @@
     text-align: center;
 }
 
-#content .article .author {
+#home .article .author {
     display: inline-block;
     margin: 0 8px;
     font-family: "Lato", sans-serif;
@@ -92,8 +75,8 @@
     font-weight: 300;
     color: #333;
 }
-#content .article .author { font-weight: 700; }
-#content .article .date {
+#home .article .author { font-weight: 700; }
+#home .article .date {
     display: inline-block;
     margin: 0 8px;
     font-family: "Lato", sans-serif;
@@ -101,17 +84,53 @@
     font-weight: 700;
     color: #333;
 }
-#content .article .border {
+#home .article .border {
     display: inline-block;
     height: 10px;
     margin-top: 2px;
     border-left: solid 1px #CCC;
 }
 
-#content .article .image {
+#home .article .image {
     width: 100%;
     overflow: hidden;
 }
-#content .article .image img {
+#home .article .image img {
     width: 100%;
+}
+
+
+
+/* Sidebar styles */
+#home .sidebar .section {
+    overflow: hidden;
+    margin-bottom: 30px;
+    background-color: #FFF;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,0.09);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+#home .sidebar .title {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0px;
+    padding: 10px 10px 10px 20px;
+    border-left: 6px solid #984B43;
+    border-right: 2px solid #984B43;
+    background-color: #FAFAFA;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+#home .sidebar .content {
+    border-top: solid 1px rgba(0,0,0,0.09);
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: 300;
+}
+#home .sidebar .item {
+    padding: 2px 0;
 }

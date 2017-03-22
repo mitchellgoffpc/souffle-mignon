@@ -10,20 +10,34 @@
 #about { background-color: #FAFAFA; }
 #about .content {
     position: relative;
+    padding: 15px 0;
     z-index: 20;
     background-color: #FAFAFA;
     font-family: "Lato", sans-serif;
     color: #333;
 }
 #about .inner {
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
     margin: 0 auto;
-    width: 860px;
-    padding: 15px 0;
+    width: 100%;
+    max-width: 860px;
 }
 
-#about .panel-outer { padding: 15px 15px; }
+#about .panel-outer {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    padding: 15px 15px;
+}
 #about .panel-inner {
+    position: relative;
     overflow: hidden;
+    height: inherit;
+    min-height: 100%;
     background-color: #FFF;
     border-radius: 3px;
     border: 1px solid rgba(0,0,0,0.09);
@@ -78,7 +92,7 @@
     text-align: center;
 }
 #about .description {
-    height: 390px;
+    margin-bottom: 42px;
     padding: 15px 20px;
     font-size: 16px;
     font-weight: 300;
@@ -88,6 +102,10 @@
 #about .description a { font-weight: 700; }
 
 #about .links {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
     margin: 0 20px;
     padding: 10px 0;
     border-top: solid 1px #EAEAEA;

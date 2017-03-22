@@ -30,6 +30,7 @@ a:hover {
     background-position: center center;
     background-attachment: fixed;
 }
+
 .landing .overlay {
     position: absolute;
     top: 50%;
@@ -54,3 +55,9 @@ a:hover {
 }
 
 .window { position: relative; }
+
+@media (max-width: 768px) {
+    .landing { background-attachment: scroll; }
+    .landing .title { font-size: 40px; }
+    .landing .subtitle { font-size: 20px; }
+}
