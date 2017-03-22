@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}{{ view.query }} - {{ block.super }}{% endblock %}
+
+{% block content %}
+<div class="row landing" id="l-search">
+    <div class="overlay">
+        <div class="title">{ Search }</div>
+        <div class="subtitle">{{ view.query }}</div>
+    </div>
+</div>
+
+<div class="row window" id="w-search"></div>
+<div class="row" id="search">
+    <div class="col-xs-12 content">
+        <div class="row inner">
+            Nothing here
+        </div>
+    </div>
+</div>
+{% endblock content %}

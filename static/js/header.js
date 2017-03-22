@@ -8,4 +8,11 @@ SM.didClickSearch = function() {
             $('.search-box').blur();
         }
     });
+
+    $('.search-box').on('keypress', function(e) {
+        if (e.which == 13) {
+            var search = $('.search-box').val();
+            window.location.href = '/search/?q=' + encodeURIComponent(search);
+        }
+    });
 }

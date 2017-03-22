@@ -105,4 +105,4 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'compressor.finders.CompressorFinder')
 
-COMPRESS_ENABLED = True
+# COMPRESS_ENABLED = True

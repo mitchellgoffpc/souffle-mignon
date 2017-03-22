@@ -15,7 +15,7 @@ from articles.models import CommentLike
 # Article views
 class ArticleListView(ListView):
     template_name = "list.html"
-    model = Article
+    queryset = Article.objects.order_by('-date')[:8]
 
 
 class ArticleDetailView(DetailView):

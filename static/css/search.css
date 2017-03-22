@@ -1,0 +1,22 @@
+/* Background image styles */
+#l-search.landing {
+    height: 55%;
+    background-image: url(https://s3.amazonaws.com/souffle-mignon-images/bigsur.jpg);
+}
+#w-search.window { height: 55%; }
+
+/* Page content styles */
+#search { background-color: #FAFAFA; }
+#search .content {
+    position: relative;
+    z-index: 20;
+    background-color: #FAFAFA;
+    font-family: "Lato", sans-serif;
+    color: #333;
+}
+
+#search .inner {
+    margin: 0 auto;
+    width: 860px;
+    padding: 15px 0;
+}

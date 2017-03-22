@@ -12,3 +12,10 @@ class HomeView(ListView):
 class AboutView(TemplateView):
     template_name = 'about.html'
     header_class = 'dark'
+
+class SearchView(TemplateView):
+    template_name = 'search.html'
+    header_class = 'dark'
+
+    def query(self):
+        return self.request.GET.get('q', '')
