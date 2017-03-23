@@ -8,7 +8,7 @@ class HomeView(ListView):
     template_name = 'index.html'
     header_class = 'dark'
     no_title = True
-    queryset = Article.objects.order_by('-date')[:5]
+    queryset = Article.objects.order_by('-date')[:6]
 
 class AboutView(TemplateView):
     template_name = 'about.html'

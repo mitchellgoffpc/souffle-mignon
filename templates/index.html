@@ -13,7 +13,7 @@
     <div class="col-xs-12">
         <div class="row inner">
 
-            <div class="col-lg-8 content">
+            <div class="col-sm-8 content">
                 {% for article in object_list %}
                     <div class="article">
                         <a class="link" href="/articles/{{ article.slug }}/"></a>
@@ -28,12 +28,39 @@
                 {% endfor %}
             </div>
 
-            <div class="col-lg-4 sidebar">
+            <div class="col-sm-4 hidden-xs sidebar">
                 <div class="section">
-                    <div class="title">twitter</div>
+                    <div class="title">
+                        <span class="first">recent</span>
+                        <span class="second"><a href="/about/">gabby</a></span>
+                    </div>
                     <div class="content">
                         {% for article in object_list %}
-                            <div class="item">Tweet</div>
+                            {% if article.author == 'Gabby Moreno' %}
+                                <div class="item">
+                                    <a href="/articles/{{ article.slug }}">
+                                        {{ article.title }}
+                                    </a>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="title">
+                        <span class="first">recent</span>
+                        <span class="second"><a href="/about/">mitchell</a></span>
+                    </div>
+                    <div class="content">
+                        {% for article in object_list %}
+                            {% if article.author == 'Mitchell Goff' %}
+                                <div class="item">
+                                    <a href="/articles/{{ article.slug }}">
+                                        {{ article.title }}
+                                    </a>
+                                </div>
+                            {% endif %}
                         {% endfor %}
                     </div>
                 </div>
