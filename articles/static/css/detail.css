@@ -88,8 +88,9 @@
 /* Article styles */
 #article .entry {
     position: relative;
-    max-width: 660px;
+    max-width: 700px;
     margin: 40px auto;
+    padding: 0 20px;
     font-family: "Lora", serif;
     font-size: 18px;
     font-weight: 300;
