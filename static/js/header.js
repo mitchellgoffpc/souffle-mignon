@@ -8,11 +8,24 @@ SM.didClickSearch = function() {
             $('.search-box').blur();
         }
     });
+}
 
-    $('.search-box').on('keypress', function(e) {
-        if (e.which == 13) {
-            var search = $('.search-box').val();
-            window.location.href = '/search/?q=' + encodeURIComponent(search);
-        }
-    });
+SM.didTypeSearch = function(e) {
+    if (e.which == 13) {
+        var search = $('.search-box').val();
+        window.location.href = '/search/?q=' + encodeURIComponent(search);
+    }
+}
+
+SM.didClickMenu = function() {
+    var hidden = $('.header .menu').attr('data-hidden') == 'true';
+    $('.header .menu').attr('data-hidden', hidden ? 'false' : 'true');
+    $('.header .menu').css('display', hidden ? 'block' : 'none');
+}
+
+SM.didClickOutsideMenu = function() {
+    if ($('.header .menu').attr('data-hidden') == 'false') {
+        $('.header .menu').attr('data-hidden', 'true');
+        $('.header .menu').css('display', 'none');
+    }
 }

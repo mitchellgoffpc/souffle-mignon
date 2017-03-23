@@ -7,6 +7,7 @@ from articles.models import Article
 class HomeView(ListView):
     template_name = 'index.html'
     header_class = 'dark'
+    no_title = True
     queryset = Article.objects.order_by('-date')[:5]
 
 class AboutView(TemplateView):

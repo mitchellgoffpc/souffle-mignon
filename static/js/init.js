@@ -1,8 +1,17 @@
 $(document).ready(function() {
     // Header/Login
-    $('.search-btn').click(SM.didClickSearch);
+    $('.header .search-box').keypress(SM.didTypeSearch);
+    $('.header .search-btn').click(SM.didClickSearch);
     $('.button.tw').click(SM.twitterLogin);
     $('.button.fb').click(SM.facebookLogin);
+
+    $(document).on('click', function(e) {
+        if ($(e.target).closest('.header .menu-icon').length) {
+            SM.didClickMenu();
+        } else if ($(e.target).closest('.header .menu').length == 0) {
+            SM.didClickOutsideMenu();
+        }
+    })
 
     // Detail
     if (SM.page == 'detail') {

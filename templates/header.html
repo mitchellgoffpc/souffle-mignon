@@ -24,7 +24,27 @@
     </div>
 
     <div class="col-xs-12 visible-xs header-sm">
-        <a class="title" href="/">souffl&eacute; mignon</a>
-        <span class="glyphicon glyphicon-menu-hamburger menu"></span>
+        {% if not view.no_title %}
+            <div class="title"><a href="/">souffl&eacute; mignon</a></div>
+        {% endif %}
+        <span class="glyphicon glyphicon-menu-hamburger menu-icon"></span>
+
+        <div class="menu" data-hidden="true">
+            <div class="title-wrapper">
+                <div class="title"><a href="/">souffl&eacute; mignon</a></div>
+                <span class="glyphicon glyphicon-menu-hamburger menu-icon"></span>
+            </div>
+
+            <div class="items">
+                <a class="item" href="/">Home</a>
+                <a class="item" href="/about/">About Us</a>
+                <a class="item" href="/articles/">Blog</a>
+                <a class="item"
+                    target="_blank"
+                    href="https://www.youtube.com/channel/UCx60rjk4NvoeP25qP4Y56MA">
+                    Videos
+                </a>
+            </div>
+        </div>
     </div>
 </div>
