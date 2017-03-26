@@ -12,6 +12,8 @@ DEBUG = True
 
 # Secret keys
 SECRET_KEY = 'l&1ffkxp*twbuf)p8+-hduct5ks23(hf^8lr3=)uj43lci9yak'
+
+GOOGLE = { 'key': 'AIzaSyBfLHqje0T_1lz4eTotYdwFqb4m1QNKG4I' }
 TWITTER = {
     'key': "J6WHuaYyxsmS8AxfblcyJ1xGk",
     'secret': "daGGZ9sF8uFGAZOIjATWomJDnBpN6SM65CFcPnZb7xVJyJ8CBg" }

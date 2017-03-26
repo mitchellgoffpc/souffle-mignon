@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load util %}
 
 {% block content %}
 <div class="row landing" id="l-home">
@@ -31,35 +32,42 @@
             <div class="col-sm-4 hidden-xs sidebar">
                 <div class="section">
                     <div class="title">
-                        <span class="first">recent</span>
-                        <span class="second"><a href="/about/">gabby</a></span>
+                        <span class="first">twitter</span>
+                        <span class="second">
+                            <a href="https://twitter.com/soufflemignon" target="_blank">@soufflemignon</a>
+                        </span>
                     </div>
                     <div class="content">
-                        {% for article in object_list %}
-                            {% if article.author == 'Gabby Moreno' %}
-                                <div class="item">
-                                    <a href="/articles/{{ article.slug }}">
-                                        {{ article.title }}
-                                    </a>
+                        {% for tweet in view.tweets %}
+                            <div class="item tweet">
+                                <div class="icon"><span class="fa fa-twitter" aria-hidden="true"></span></div>
+                                <div class="body">
+                                    <div class="text">{{ tweet.text|urlify|safe }}</div>
+                                    <div class="date">{{ tweet.created_at|to_date|date:"F j, Y - g:i A" }}</div>
                                 </div>
-                            {% endif %}
+                            </div>
                         {% endfor %}
                     </div>
                 </div>
 
                 <div class="section">
                     <div class="title">
-                        <span class="first">recent</span>
-                        <span class="second"><a href="/about/">mitchell</a></span>
+                        <span class="first">youtube</span>
+                        <span class="second">
+                            <a href="https://www.youtube.com/channel/UCx60rjk4NvoeP25qP4Y56MA" target="_blank">
+                                Souffl&eacute; Mignon
+                            </a>
+                        </span>
                     </div>
                     <div class="content">
-                        {% for article in object_list %}
-                            {% if article.author == 'Mitchell Goff' %}
-                                <div class="item">
-                                    <a href="/articles/{{ article.slug }}">
-                                        {{ article.title }}
-                                    </a>
-                                </div>
+                        {% for video in view.videos %}
+                            {% if video.id.kind == "youtube#video" %}
+                                <a href="https://www.youtube.com/watch?v={{ video.id.videoId }}" target="_blank">
+                                    <div class="item video">
+                                        <img src="{{ video.snippet.thumbnails.default.url }}">
+                                        <div class="text">{{ video.snippet.title|truncatechars:60 }}</div>
+                                    </div>
+                                </a>
                             {% endif %}
                         {% endfor %}
                     </div>
