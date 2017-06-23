@@ -2,20 +2,47 @@
 
 {% block title %}{{ view.query }} - {{ block.super }}{% endblock %}
 
-{% block content %}
-<div class="row landing" id="l-search">
-    <div class="overlay">
-        <div class="title">{ Search }</div>
-        <div class="subtitle">{{ view.query }}</div>
-    </div>
-</div>
+{% block scripts %}
+    {{ block.super }}
+    <script>SM.page = 'search'</script>
+{% endblock scripts %}
 
-<div class="row window" id="w-search"></div>
-<div class="row" id="search">
-    <div class="col-xs-12 content">
+{% block content %}
+<div id="search" class="row full-height">
+    <div class="col-xs-12">
         <div class="row inner">
-            Nothing here
+            <div class="col-xs-12 search-box-wrapper">
+                <input class="search-box"
+                       value="{{ view.query }}"
+                       placeholder="Search by title, author, ..." />
+            </div>
+
+            <div class="col-xs-12 content"></div>
         </div>
     </div>
 </div>
+
+{% verbatim %}
+<script id="search-template" type="text/x-handlebars-template">
+    <div class="row results">
+        {{#each hits}}
+            <div class="col-xs-12 col-sm-6 col-md-4 panel-outer">
+                <div class="panel-inner">
+                    <a class="link" href="/articles/{{slug}}/"></a>
+                    <div class="image" style="background-image: url({{img}});"></div>
+                    <div class="title-wrapper">
+                        <div class="title">{{title}}</div>
+                        <div class="info">
+                            <div class="author">by <a href="/about/">{{author}}</a></div>
+                            <div class="border"></div>
+                            <div class="date">{{formatDate date "MMM D, YYYY"}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</script>
+{% endverbatim %}
+
 {% endblock content %}

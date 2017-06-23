@@ -20,7 +20,6 @@ class AboutView(TemplateView):
 
 class SearchView(TemplateView):
     template_name = 'search.html'
-    header_class = 'dark'
 
     def query(self):
         return self.request.GET.get('q', '')

@@ -1,19 +1,20 @@
 SM.didClickSearch = function() {
-    var hidden = $('.search-box').attr('data-hidden') == 'true';
-    $('.search-box').attr('data-hidden', hidden ? 'false' : 'true');
-    $('.search-box').animate({ marginRight: hidden ? 0 : -180 }, function() {
+    var search = $('.header .search-box');
+    var hidden = search.attr('data-hidden') == 'true';
+    search.attr('data-hidden', hidden ? 'false' : 'true');
+    search.animate({ marginRight: hidden ? 0 : -180 }, function() {
         if (hidden) {
-            $('.search-box').focus();
+            search.focus();
         } else {
-            $('.search-box').blur();
+            search.blur();
         }
     });
 }
 
 SM.didTypeSearch = function(e) {
     if (e.which == 13) {
-        var search = $('.search-box').val();
-        window.location.href = '/search/?q=' + encodeURIComponent(search);
+        var query = $('.header .search-box').val();
+        window.location.href = '/search/?q=' + encodeURIComponent(query);
     }
 }
 

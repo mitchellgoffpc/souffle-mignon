@@ -17,27 +17,21 @@
     color: #333;
 }
 #about .inner {
-    display: -webkit-flex;
     display: flex;
     flex-wrap: wrap;
-    -webkit-flex-wrap: wrap;
     margin: 0 auto;
     width: 100%;
     max-width: 860px;
 }
 
 #about .panel-outer {
-    display: -webkit-flex;
     display: flex;
-    flex-direction: column;
-    -webkit-flex-direction: column;
     padding: 15px 15px;
 }
 #about .panel-inner {
     position: relative;
     overflow: hidden;
-    height: inherit;
-    min-height: 100%;
+    width: 100%;
     background-color: #FFF;
     border-radius: 3px;
     border: 1px solid rgba(0,0,0,0.09);

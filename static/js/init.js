@@ -1,3 +1,8 @@
+var Algolia = {
+    APP_ID: "FDH6H58XJI",
+    API_KEY: "d3f8417e2ebfb6f7c807b9b52f908a65" }
+
+
 $(document).ready(function() {
     // Header/Login
     $('.header .search-box').keypress(SM.didTypeSearch);
@@ -32,4 +37,24 @@ $(document).ready(function() {
             }
         })
     }
+
+    if (SM.page == 'search') {
+        SM.Algolia = algoliasearch(Algolia.APP_ID, Algolia.API_KEY);
+        SM.Articles = SM.Algolia.initIndex('Article');
+
+        var source = $("#search-template").html();
+        SM.template = Handlebars.compile(source);
+        Handlebars.registerHelper('formatDate', formatDate);
+
+        SM.didUpdateSearch();
+        $('#search .search-box').focus();
+        $('#search .search-box').on('input', SM.didUpdateSearch);
+    }
 });
+
+
+
+// Helper functions
+function formatDate(dt, format) {
+    return moment.unix(dt).format(format);
+}

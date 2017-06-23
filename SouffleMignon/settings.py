@@ -18,6 +18,10 @@ TWITTER = {
     'key': "J6WHuaYyxsmS8AxfblcyJ1xGk",
     'secret': "daGGZ9sF8uFGAZOIjATWomJDnBpN6SM65CFcPnZb7xVJyJ8CBg" }
 
+ALGOLIA = {
+    'APPLICATION_ID': "FDH6H58XJI",
+    'API_KEY': "23a6baa0a134bda5e2acf40e884bd27f" }
+
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
@@ -38,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'algoliasearch_django',
     'compressor',
     'auth',
     'articles']
