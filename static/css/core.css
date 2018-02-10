@@ -47,7 +47,6 @@ a:hover {
     white-space: nowrap;
     transform: translate(-50%, -50%);
     transition: background 0.3s ease-in-out;
-    cursor: pointer;
 }
 .landing .overlay:hover {
     background: rgba(0,0,0,0.35);

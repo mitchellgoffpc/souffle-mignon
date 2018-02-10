@@ -1,9 +1,9 @@
 /* Background image styles */
 #l-about.landing {
     height: 55%;
-    background-image: url(https://s3.amazonaws.com/souffle-mignon-images/space.png);
+    background-image: url(/static/svg/space-lp.svg);
 }
-#w-about.window { height: 55%; }
+#w-about.window { margin-top: 55vh; }
 
 
 /* Page content styles */
