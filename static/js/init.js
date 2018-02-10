@@ -18,6 +18,23 @@ $(document).ready(function() {
         }
     })
 
+    // Image preloading
+    $('.preloader').one('load', function(e) {
+        var $landing = $(e.target).closest('.landing')
+        var $background = $landing.find('.background')
+
+        $landing.addClass('loaded');
+        $background.css('background-image', 'url(' + $(e.target).attr('src') + ')')
+    }).each(function() {
+        if (this.complete) $(this).trigger('load');
+    })
+
+    $('.landing .overlay').hover(function(e) {
+        $(e.target).closest('.landing').addClass('hovered')
+    }, function(e) {
+        $(e.target).closest('.landing').removeClass('hovered')
+    })
+
     // Detail
     if (SM.page == 'detail') {
         SM.checkLinkPosition();
