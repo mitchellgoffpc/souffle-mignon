@@ -20,19 +20,19 @@ $(document).ready(function() {
 
     // Image preloading
     $('.preloader').one('load', function(e) {
-        var $landing = $(e.target).closest('.landing')
-        var $background = $landing.find('.background')
+        var $base = $(e.target).closest('.preloadable')
+        var $background = $base.find('.background')
 
-        $landing.addClass('loaded');
+        $base.addClass('loaded');
         $background.css('background-image', 'url(' + $(e.target).attr('src') + ')')
     }).each(function() {
         if (this.complete) $(this).trigger('load');
     })
 
-    $('.landing .overlay').hover(function(e) {
-        $(e.target).closest('.landing').addClass('hovered')
+    $('.preloadable .overlay').hover(function(e) {
+        $(e.target).closest('.preloadable').addClass('hovered')
     }, function(e) {
-        $(e.target).closest('.landing').removeClass('hovered')
+        $(e.target).closest('.preloadable').removeClass('hovered')
     })
 
     // Detail

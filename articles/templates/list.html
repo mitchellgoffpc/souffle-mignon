@@ -11,7 +11,11 @@
                 {% for article in object_list %}
                     <div class="article">
                         <a href="/articles/{{ article.slug }}">
-                            <div class="image"><img src="{{ article.img }}" /></div>
+                            <div class="image preloadable"
+                                 style="background-image: url('data:image/svg+xml;base64,{{ article.svg }}')">
+                                <div class="background"></div>
+                                <img class="preloader" src="{{ article.img }}" />
+                            </div>
                         </a>
                         <div class="title-wrapper">
                             <div class="title">

@@ -42,9 +42,10 @@
     border-left: solid 1px #CCC;
 }
 
-#article .image { width: 100%; }
-#article .image img { width: 100%; }
-
+#article .image {
+    width: 100vw;
+    height: 90vh;
+}
 
 
 /* Link styles */

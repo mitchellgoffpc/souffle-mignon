@@ -22,14 +22,16 @@
     width: 300px;
 
     padding: 8px 20px;
-    border: solid 1px #CCC;
+    border: 1px solid rgba(0,0,0,0.09);
     border-radius: 20px;
-    background: none;
+    background: #FFF;
 
     font-family: 'Lato', sans-serif;
     font-size: 18px;
     font-weight: 300;
     color: #333;
+
+    transition: border-color 0.2s;
 }
 #search .search-box:focus {
     border-color: #984B43;
@@ -69,9 +71,8 @@
     overflow: hidden;
     width: 100%;
     background-color: #FFF;
-    border-radius: 3px;
-    border: 1px solid rgba(0,0,0,0.09);
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    border-radius: 5px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.12);
 }
 
 #search .panel-inner a {
@@ -118,7 +119,7 @@
     flex-direction: column;
     flex-grow: 1;
     justify-content: center;
-    padding-top: 10px;
+    padding-top: 15px;
 
     font-family: "Lato", sans-serif;
     font-size: 16px;
@@ -128,7 +129,7 @@
 }
 #search .title a { text-decoration: none; }
 
-#search .info { padding: 5px 0 8px; }
+#search .info { padding: 5px 0 15px; }
 #search .info .author {
     display: inline-block;
     margin: 0 5px;

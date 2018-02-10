@@ -11,6 +11,7 @@ class Article(models.Model):
     author = models.CharField(max_length=255)
     img = models.URLField(max_length=255)
     entry = models.TextField()
+    svg = models.TextField()
 
     def __str__(self):
         return self.title

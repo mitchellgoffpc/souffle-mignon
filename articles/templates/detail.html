@@ -20,8 +20,10 @@
         <div class="date">{{ object.date|date:"F j, Y" }}</div>
     </div>
 
-    <div class="image">
-        <img src="{{ object.img }}" />
+    <div class="image preloadable"
+         style="background-image: url('data:image/svg+xml;base64,{{ object.svg|safe }}')">
+        <div class="background"></div>
+        <img class="preloader" src="{{ object.img }}" />
     </div>
 
     <div class="entry">

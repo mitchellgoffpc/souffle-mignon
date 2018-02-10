@@ -29,16 +29,15 @@
     width: 100%;
     margin-bottom: 20px;
     background-color: #FFF;
-    border-radius: 3px;
-    border: 1px solid rgba(0,0,0,0.09);
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    border-radius: 5px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.12);
     text-align: center;
     overflow: hidden;
 }
 
 #home .article a {
     position: relative;
-    z-index: 1;
+    z-index: 4;
 }
 #home .article .link {
     display: block;
@@ -47,12 +46,12 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 0;
+    z-index: 3;
 }
 #home .article .info {
     padding-bottom: 20px;
     border-bottom: solid 2px #FFF;
-    transition: border-color 0.2s;
+    transition: border-color 0.3s ease-in-out;
 }
 #home .article:hover .info {
     border-color: #984B43;
@@ -94,10 +93,10 @@
 
 #home .article .image {
     width: 100%;
-    overflow: hidden;
+    height: 360px;
 }
-#home .article .image img {
-    width: 100%;
+#home .article:hover .image .background {
+    opacity: 0;
 }
 
 

@@ -16,9 +16,8 @@
 #articles .article {
     margin-bottom: 40px;
     background-color: #FFF;
-    border-radius: 3px;
-    border: solid 1px rgba(0,0,0,0.09);
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    border-radius: 5px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.12);
     text-align: center;
     overflow: hidden;
 }
@@ -67,9 +66,12 @@
 
 #articles .article .image {
     width: 100%;
+    height: 360px;
     overflow: hidden;
 }
-#articles .article .image img { width: 100%; }
+#articles .article .image:hover .background {
+    opacity: 0;
+}
 
 #articles .article .entry {
     margin: 0 25px;

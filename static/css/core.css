@@ -25,13 +25,38 @@ a:hover {
 }
 
 
-/* Background styles */
-.landing {
-    position: fixed;
-    width: 100%;
+/* Preloading styles */
+.preloadable {
+    position: relative;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+}
+.preloadable .preloader {
+    width: 0;
+    height: 0;
+}
+.preloadable .background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    opacity: 0;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: opacity 0.3s ease-in-out;
+}
+.preloadable.loaded .background { opacity: 1; }
+
+
+/* Background styles */
+.landing {
+    position: fixed;
+    width: 100vw;
     background-attachment: fixed;
 }
 
@@ -48,9 +73,7 @@ a:hover {
     transform: translate(-50%, -50%);
     transition: background 0.3s ease-in-out;
 }
-.landing .overlay:hover {
-    background: rgba(0,0,0,0.35);
-}
+.landing .overlay:hover { background: rgba(0,0,0,0.35); }
 
 .landing .title {
     margin-top: -10px;
@@ -67,26 +90,8 @@ a:hover {
     color: #F3F3F3;
 }
 
-.landing .preloader {
-    width: 0;
-    height: 0;
-}
-.landing .background {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-    opacity: 0;
-
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed;
-    transition: opacity 0.3s ease-in-out;
-}
-.landing.loaded:not(.hovered) .background { opacity: 1; }
+.landing .background { background-attachment: fixed; }
+.landing.hovered .background { opacity: 0; }
 
 .window { position: relative; }
 
@@ -97,15 +102,13 @@ a:hover {
 }
 
 
-
 /* Sidebar styles */
 .sidebar .section {
     overflow: hidden;
     margin-bottom: 30px;
     background-color: #FFF;
-    border-radius: 3px;
-    border: 1px solid rgba(0,0,0,0.09);
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    border-radius: 5px;
+    box-shadow: 0 0 2px rgba(0,0,0,0.12);
 }
 
 .sidebar .title {
