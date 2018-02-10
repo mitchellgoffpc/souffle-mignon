@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 {% load util %}
+{% load static %}
 
 {% block content %}
-<div class="row landing preloadable" id="l-home">
+<div class="row landing preloadable" id="l-home"
+     style="background-image: url('data:image/svg+xml;base64,{% include "home-lp.b64" %}')">
     <img class="preloader" src="https://s3.amazonaws.com/souffle-mignon-images/home.jpg" />
     <div class="background"></div>
     <div class="overlay" onclick="window.location = '/about/'">

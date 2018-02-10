@@ -1,8 +1,5 @@
 /* Background image styles */
-#l-about.landing {
-    height: 55%;
-    background-image: url(/static/svg/space-lp.svg);
-}
+#l-about.landing { height: 55%; }
 #w-about.window { margin-top: 55vh; }
 
 
