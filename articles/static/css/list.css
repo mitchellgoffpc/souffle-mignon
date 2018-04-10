@@ -39,7 +39,11 @@
     color: #333;
     text-align: center;
 }
-#articles .article .title-wrapper .title a { text-decoration: none; }
+#articles .article .title-wrapper .title a {
+    color: #333;
+    text-decoration: none;
+}
+
 #articles .article .title-wrapper .author {
     display: inline-block;
     margin: 0 8px;

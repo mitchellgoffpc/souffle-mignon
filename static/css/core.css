@@ -8,15 +8,9 @@
 html, body { height: 100%; }
 textarea:focus,
 input:focus { outline: none; }
-a {
-    color: #233237;
-    text-decoration: none;
-}
-a:focus { text-decoration: none; }
-a:hover {
-    color: #18121E;
-    text-decoration: underline;
-}
+a, a:focus { text-decoration: none; }
+a:hover { text-decoration: underline; }
+ol { padding-left: 16px; }
 
 .container-fluid { height: 100%; }
 .row.full-height {
